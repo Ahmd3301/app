@@ -26,7 +26,7 @@ async function getNewCookies() {
         console.log("🌐 الانتقال للموقع...");
         await page.goto('https://www.faselhds.biz/', {
             waitUntil: 'networkidle2', // الانتظار حتى يهدأ الاتصال
-            timeout: 5000
+            timeout: 20000
         });
 
         // --- محاكاة السلوك البشري ---
@@ -73,7 +73,7 @@ async function getNewCookies() {
         let foundCookies = false;
         let cookies = [];
         
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 15; i++) {
             cookies = await page.cookies();
             const cfClearance = cookies.find(c => c.name === 'cf_clearance');
             
